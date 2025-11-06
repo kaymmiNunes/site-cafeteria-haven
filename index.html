@@ -3,18 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cafeteria Haven</title>
+    <title>☕ Cafeteria Haven</title>
+
+    <link rel="icon" href="images/logo.png" type="image/png" />
+
     <link rel="stylesheet" href="styles/main.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <!--CABEÇALHO / NAVEGAÇÃO-->
     <header>
-      <nav class="navbar">
+      <nav class="navbar" aria-label="Navegação principal">
         <div class="logo">
-          <img src="images/logo.png" alt="Logo Cafeteria Haven" />
+          <a href="#inicio" aria-label="Voltar ao início">
+            <img src="images/logo_completa.png" alt="Logo da Cafeteria Haven" />
+          </a>
         </div>
+
+        <button class="menu-toggle" aria-label="Abrir menu de navegação">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <ul class="nav-links">
-          <li><a href="#home">Início</a></li>
+          <li><a href="#inicio">Início</a></li>
           <li><a href="#cardapio">Cardápio</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -22,25 +39,26 @@
       </nav>
     </header>
 
-    <!--HERO / BANNER-->
-    <section id="home" class="hero">
+    <section id="inicio" class="hero">
       <div class="hero-content">
         <img
           src="images/logo_completa.png"
-          alt="Logo completo Cafeteria Haven"
+          alt="Logo completa da Cafeteria Haven"
           class="logo-banner"
         />
-        <h3>Seu ponto de encontro favorito</h3>
-        <a href="#cardapio" class="btn">Ver Cardápio</a>
+        <h3><i>Seu ponto de encontro favorito</i></h3>
+        <a href="#cardapio" class="btn" aria-label="Ver nosso cardápio">
+          Ver Cardápio
+        </a>
       </div>
     </section>
 
-    <!--CARDÁPIO-->
     <section id="cardapio" class="menu">
       <h2>Nosso Cardápio</h2>
+
       <div class="menu-grid">
         <div class="menu-item">
-          <img src="images/coffee1.jpg" alt="Espresso Clássico" />
+          <img src="images/coffee1.jpg" alt="Café Espresso Clássico" />
           <div class="menu-info">
             <h3>Espresso Clássico</h3>
             <p>
@@ -55,7 +73,7 @@
           <div class="menu-info">
             <h3>Latte Macchiato</h3>
             <p>
-              Uma bebida de três camadas perfeitamente distintas. Leite
+              Uma bebida de três camadas perfeitamente distintas: leite
               vaporizado e doce na base, espresso no meio e espuma cremosa no
               topo.
             </p>
@@ -74,7 +92,7 @@
         </div>
 
         <div class="menu-item">
-          <img src="images/coffee4.jpg" alt="Mocha de Menta (Sazonal)" />
+          <img src="images/coffee4.jpg" alt="Mocha de Menta Sazonal" />
           <div class="menu-info">
             <h3>Mocha de Menta (Sazonal)</h3>
             <p>
@@ -111,29 +129,31 @@
       </div>
     </section>
 
-    <!--SOBRE-->
     <section id="sobre" class="sobre">
       <div class="sobre-texto">
         <h2>Sobre Nós</h2>
         <p>
-          A <strong>Cafeteria Haven</strong> nasceu da paixão por café e bons
-          momentos. Cada xícara é feita com carinho e qualidade, oferecendo uma
-          experiência acolhedora em cada gole. Nosso espaço é pensado para quem
-          ama o sabor e o aroma do café, em um ambiente aconchegante e cheio de
-          charme.
+          Bem-vindo à Cafeteria Haven, um cantinho feito para desacelerar e se
+          sentir em casa. Nosso ambiente foi cuidadosamente inspirado no icônico
+          Central Perk, do seriado Friends, combinando o charme retrô com o
+          aconchego de um café de verdade. Entre poltronas de veludo, iluminação
+          suave e o aroma de café fresco, criamos um espaço perfeito para
+          conversar, rir, estudar ou simplesmente aproveitar o momento. Cada
+          detalhe — das cores quentes às músicas de fundo — foi pensado para
+          despertar a sensação de nostalgia e amizade que marcou uma geração.
         </p>
       </div>
-      <div class="sobre-img"></div>
     </section>
 
-    <!--CONTATO / RODAPÉ-->
     <footer id="contato">
       <div class="contato-info">
         <p><strong>📍 Endereço:</strong> Rua das Flores, 123</p>
         <p><strong>📞 Telefone:</strong> (11) 98765-4321</p>
         <p><strong>🕓 Horário:</strong> Seg–Sex: 7h–20h | Sáb–Dom: 8h–18h</p>
       </div>
-      <p>&copy; 2025 Cafeteria Haven — Feito com ❤️ e café.</p>
+      <p>&copy; 2025 Cafeteria Haven — Feito por Kaymmi Nunes</p>
     </footer>
+
+    <script src="scripts/menu.js" defer></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   --primary-brown: #8b4513;
   --accent-gold: #d6a02b;
   --cream: #fff8dc;
-  --dark: #2b1b12;
+  --dark: #fff;
   --overlay: rgba(43, 27, 18, 0.85);
 }
 
@@ -124,7 +124,7 @@ header {
   border-left: 1px solid rgba(214, 154, 43, 0.3);
 
   transition: width 0.4s ease-in-out;
-  padding-right: 1.2rem;
+  padding-right: 0.5rem;
 }
 
 .nav-links.active {
@@ -211,7 +211,7 @@ header {
   background: rgba(78, 45, 23, 0.55);
   border: 1px solid rgba(214, 154, 43, 0.4);
   border-radius: 18px;
-  padding: 2.5rem 3rem;
+  padding: 1rem 1rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
   max-width: 420px;
@@ -224,7 +224,7 @@ header {
 }
 
 .hero-content img.logo-banner {
-  width: 300px;
+  width: 200px;
   margin-bottom: 1rem;
   filter: drop-shadow(0 0 10px rgba(214, 154, 43, 0.6));
 }
@@ -293,7 +293,7 @@ header {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 4fr));
   gap: 1.5rem;
 }
 
@@ -358,7 +358,7 @@ header {
 
 /* RODAPÉ */
 footer {
-  background: var(--dark);
+  background: var(--overlay);
   color: var(--cream);
   text-align: center;
   padding: 0.5rem 0.5rem;

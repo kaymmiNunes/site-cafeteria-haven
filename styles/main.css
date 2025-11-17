@@ -16,6 +16,12 @@
   scroll-behavior: smooth;
 }
 
+/* Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-gold) var(--cream);
+}
+
 body {
   background-color: var(--cream);
   color: var(--dark);
@@ -55,6 +61,11 @@ header {
   background: rgba(78, 45, 23);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-aba {
+  width: 32px;
+  height: 32px;
 }
 
 .navbar {

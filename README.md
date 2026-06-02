@@ -53,4 +53,4 @@ O layout foi planejado para se adaptar a diferentes tamanhos de tela, oferecendo
 
 ## ▶️ Como Executar
 
-Acesse o link: **https://kaymminunes.github.io/site-cafeteria-haven/**
+Acesse o link: **https://site-cafeteria-haven.kaymmiknb.workers.dev/**

@@ -3,21 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cafeteria Haven: seu ponto de encontro favorito para cafés especiais, bebidas geladas e momentos aconchegantes."
+    />
     <title>Cafeteria Haven</title>
 
-    <link
-      rel="icon"
-      href="images/logo-navegador.png"
-      type="image/png"
-      class="icon-aba"
-    />
+    <link rel="icon" href="images/logo-navegador.png" type="image/png" />
 
-    <link rel="stylesheet" href="styles/main.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
 
   <body>
@@ -29,13 +30,19 @@
           </a>
         </div>
 
-        <button class="menu-toggle" aria-label="Abrir menu de navegação">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu de navegação"
+          aria-controls="menu-principal"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="menu-principal">
           <li><a href="#inicio">Início</a></li>
           <li><a href="#cardapio">Cardápio</a></li>
           <li><a href="#sobre">Sobre</a></li>
@@ -44,118 +51,121 @@
       </nav>
     </header>
 
-    <section id="inicio" class="hero">
-      <div class="hero-content">
-        <img
-          src="images/logo_completa.png"
-          alt="Logo completa da Cafeteria Haven"
-          class="logo-banner"
-        />
-        <h4><i>Seu ponto de encontro favorito</i></h4>
-        <a href="#cardapio" class="btn" aria-label="Ver nosso cardápio">
-          Ver Cardápio
-        </a>
-      </div>
-    </section>
-
-    <section id="cardapio" class="menu">
-      <h2>Nosso Cardápio</h2>
-
-      <div class="menu-grid">
-        <div class="menu-item">
-          <img src="images/coffee1.jpg" alt="Café Espresso Clássico" />
-          <div class="menu-info">
-            <h3>Espresso Clássico</h3>
-            <p>
-              O coração de toda cafeteria. Um shot intenso e encorpado de café
-              puro, extraído sob alta pressão, com uma rica e aveludada crema.
-            </p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <img src="images/coffee2.jpg" alt="Latte Macchiato" />
-          <div class="menu-info">
-            <h3>Latte Macchiato</h3>
-            <p>
-              Uma bebida de três camadas perfeitamente distintas: leite
-              vaporizado e doce na base, espresso no meio e espuma cremosa no
-              topo.
-            </p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <img src="images/coffee3.jpg" alt="Cold Brew de Caramelo" />
-          <div class="menu-info">
-            <h3>Cold Brew de Caramelo</h3>
-            <p>
-              Café extraído a frio por horas, suave e menos ácido. Servido com
-              gelo e um toque de xarope de caramelo.
-            </p>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <img src="images/coffee4.jpg" alt="Mocha de Menta Sazonal" />
-          <div class="menu-info">
-            <h3>Mocha de Menta (Sazonal)</h3>
-            <p>
-              Chocolate, espresso, leite vaporizado e toque refrescante de
-              menta. Coberto com chantilly e raspas de chocolate.
-            </p>
-          </div>
-        </div>
-
-        <div class="menu-item">
+    <main>
+      <section id="inicio" class="hero">
+        <div class="hero-content">
           <img
-            src="images/coffee5.jpg"
-            alt="Chá Gelado de Hibisco e Frutas Vermelhas"
+            src="images/logo_completa.png"
+            alt="Logo completa da Cafeteria Haven"
+            class="logo-banner"
           />
-          <div class="menu-info">
-            <h3>Chá Gelado de Hibisco e Frutas Vermelhas</h3>
-            <p>
-              Chá de hibisco vibrante misturado com frutas vermelhas.
-              Refrescante, leve e naturalmente doce.
-            </p>
-          </div>
+          <h1>Seu ponto de encontro favorito</h1>
+          <a href="#cardapio" class="btn" aria-label="Ver nosso cardápio">
+            Ver Cardápio
+          </a>
         </div>
+      </section>
 
-        <div class="menu-item">
-          <img src="images/coffee6.jpg" alt="Cappuccino Tradicional" />
-          <div class="menu-info">
-            <h3>Cappuccino Tradicional</h3>
-            <p>
-              Equilíbrio perfeito de espresso, leite vaporizado e espuma
-              cremosa. Polvilhado com cacau para um toque final irresistível.
-            </p>
-          </div>
+      <section id="cardapio" class="menu" aria-labelledby="titulo-cardapio">
+        <h2 id="titulo-cardapio">Nosso Cardápio</h2>
+
+        <div class="menu-grid">
+          <article class="menu-item">
+            <img src="images/coffee1.jpg" alt="Café Espresso Clássico" />
+            <div class="menu-info">
+              <h3>Espresso Clássico</h3>
+              <p>
+                O coração de toda cafeteria. Um shot intenso e encorpado de café
+                puro, extraído sob alta pressão, com uma rica e aveludada crema.
+              </p>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="images/coffee2.jpg" alt="Latte Macchiato" />
+            <div class="menu-info">
+              <h3>Latte Macchiato</h3>
+              <p>
+                Uma bebida de três camadas perfeitamente distintas: leite
+                vaporizado e doce na base, espresso no meio e espuma cremosa no
+                topo.
+              </p>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="images/coffee3.jpg" alt="Cold Brew de Caramelo" />
+            <div class="menu-info">
+              <h3>Cold Brew de Caramelo</h3>
+              <p>
+                Café extraído a frio por horas, suave e menos ácido. Servido com
+                gelo e um toque de xarope de caramelo.
+              </p>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="images/coffee4.jpg" alt="Mocha de Menta Sazonal" />
+            <div class="menu-info">
+              <h3>Mocha de Menta (Sazonal)</h3>
+              <p>
+                Chocolate, espresso, leite vaporizado e toque refrescante de
+                menta. Coberto com chantilly e raspas de chocolate.
+              </p>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img
+              src="images/coffee5.jpg"
+              alt="Chá Gelado de Hibisco e Frutas Vermelhas"
+            />
+            <div class="menu-info">
+              <h3>Chá Gelado de Hibisco e Frutas Vermelhas</h3>
+              <p>
+                Chá de hibisco vibrante misturado com frutas vermelhas.
+                Refrescante, leve e naturalmente doce.
+              </p>
+            </div>
+          </article>
+
+          <article class="menu-item">
+            <img src="images/coffee6.jpg" alt="Cappuccino Tradicional" />
+            <div class="menu-info">
+              <h3>Cappuccino Tradicional</h3>
+              <p>
+                Equilíbrio perfeito de espresso, leite vaporizado e espuma
+                cremosa. Polvilhado com cacau para um toque final irresistível.
+              </p>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="sobre" class="sobre">
-      <div class="sobre-texto">
-        <h2>Sobre Nós</h2>
-        <p>
-          Bem-vindo à Cafeteria Haven, um cantinho feito para desacelerar e se
-          sentir em casa. Nosso ambiente foi cuidadosamente inspirado no icônico
-          Central Perk, do seriado Friends, combinando o charme retrô com o
-          aconchego de um café de verdade. Entre poltronas de veludo, iluminação
-          suave e o aroma de café fresco, criamos um espaço perfeito para
-          conversar, rir, estudar ou simplesmente aproveitar o momento. Cada
-          detalhe — das cores quentes às músicas de fundo — foi pensado para
-          despertar a sensação de nostalgia e amizade que marcou uma geração.
-        </p>
-      </div>
-    </section>
+      <section id="sobre" class="sobre" aria-labelledby="titulo-sobre">
+        <div class="sobre-texto">
+          <h2 id="titulo-sobre">Sobre Nós</h2>
+          <p>
+            Bem-vindo à Cafeteria Haven, um cantinho feito para desacelerar e se
+            sentir em casa. Nosso ambiente foi cuidadosamente inspirado no icônico
+            Central Perk, do seriado Friends, combinando o charme retrô com o
+            aconchego de um café de verdade. Entre poltronas de veludo,
+            iluminação suave e o aroma de café fresco, criamos um espaço perfeito
+            para conversar, rir, estudar ou simplesmente aproveitar o momento.
+            Cada detalhe — das cores quentes às músicas de fundo — foi pensado
+            para despertar a sensação de nostalgia e amizade que marcou uma
+            geração.
+          </p>
+        </div>
+      </section>
+    </main>
 
     <footer id="contato">
-      <div class="contato-info">
+      <address class="contato-info">
         <p><strong>📍 Endereço:</strong> Rua das Flores, 123</p>
         <p><strong>📞 Telefone:</strong> (11) 98765-4321</p>
         <p><strong>🕓 Horário:</strong> Seg–Sex: 7h–20h | Sáb–Dom: 8h–18h</p>
-      </div>
+      </address>
       <p>&copy; 2025 Cafeteria Haven — Feito por Kaymmi Nunes</p>
     </footer>
 

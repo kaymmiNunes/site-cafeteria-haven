@@ -1,13 +1,24 @@
-/* VARIÁVEIS DE COR E BASE */
+/* ===============================
+   VARIÁVEIS DE COR E BASE
+================================ */
 :root {
   --primary-brown: #8b4513;
   --accent-gold: #d6a02b;
   --cream: #fff8dc;
   --dark: #fff;
   --overlay: rgba(43, 27, 18, 0.85);
+
+  --header-bg: rgb(78, 45, 23);
+  --text-dark: #2b1b12;
+  --text-muted: #444;
+  --card-bg: #fff;
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 22px rgba(0, 0, 0, 0.18);
 }
 
-/* RESET GERAL */
+/* ===============================
+   RESET GERAL
+================================ */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +27,6 @@
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--accent-gold) var(--cream);
@@ -28,44 +38,27 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR */
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  background: rgba(214, 154, 43, 0.4);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* NAVBAR */
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  background: rgba(214, 154, 43, 0.4);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+button,
+a {
+  font: inherit;
 }
 
 /* ===============================
-   CABEÇALHO / NAVEGAÇÃO MODERNA
-=============================== */
+   CABEÇALHO / NAVEGAÇÃO ORIGINAL
+================================ */
 header {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  background: rgba(78, 45, 23);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.icon-aba {
-  width: 32px;
-  height: 32px;
 }
 
 .navbar {
@@ -77,10 +70,19 @@ header {
   overflow: hidden;
 }
 
+.logo {
+  position: relative;
+  z-index: 1020;
+}
+
 .logo img {
   width: 120px;
   transition: opacity 0.4s ease;
   filter: drop-shadow(0 0 6px rgba(214, 154, 43, 0.4));
+}
+
+.navbar.menu-open .logo img {
+  opacity: 0.25;
 }
 
 /* BOTÃO MENU HAMBÚRGUER */
@@ -103,16 +105,17 @@ header {
   height: 3px;
   background-color: var(--accent-gold);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* ANIMAÇÃO PARA O BOTÃO VIRAR "X" */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
+
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
+
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
@@ -128,6 +131,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1050;
 
   background: rgba(214, 154, 43, 0.4);
   backdrop-filter: blur(15px);
@@ -147,7 +151,7 @@ header {
   margin: 0 1rem;
   opacity: 0;
   transform: translateX(20px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links.active li {
@@ -162,67 +166,42 @@ header {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
   color: var(--accent-gold);
   text-shadow: 0 0 8px rgba(214, 154, 43, 0.5);
 }
 
-/* ESCONDER LOGO AO ABRIR MENU */
-.nav-links.active ~ .logo img {
-  opacity: 0.25;
-}
-
-/* EFEITO DE X NO BOTÃO */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* ESCONDER LOGO AO ABRIR MENU */
-.nav-links.active ~ .logo img {
-  opacity: 0.2;
-}
-
-/* EFEITO ABRIR MENU (X) */
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.menu-toggle:focus-visible,
+.btn:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 4px;
 }
 
 /* ===============================
    HERO / BANNER PRINCIPAL
-=============================== */
+================================ */
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--text-light);
+  color: var(--dark);
   min-height: 100vh;
   background: linear-gradient(rgba(30, 18, 10, 0.6), rgba(30, 18, 10, 0.6)),
     url("../images/banner.jpg") center/cover no-repeat;
-  padding-top: 5rem;
+  padding: 6rem 1.5rem 3rem;
 }
 
-/* CAIXA COM A LOGO CENTRAL */
 .hero-content {
   background: rgba(78, 45, 23, 0.55);
   border: 1px solid rgba(214, 154, 43, 0.4);
   border-radius: 18px;
-  padding: 1rem 1rem;
+  padding: 1rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
   max-width: 420px;
@@ -234,42 +213,20 @@ header {
   box-shadow: 0 6px 30px rgba(214, 154, 43, 0.25);
 }
 
-.hero-content img.logo-banner {
-  width: 200px;
-  margin-bottom: 1rem;
+.logo-banner {
+  width: 220px;
+  margin: 0 auto 1rem;
   filter: drop-shadow(0 0 10px rgba(214, 154, 43, 0.6));
 }
 
-.hero-content h3 {
+.hero-content h1 {
   font-size: 1.2rem;
   color: var(--cream);
   font-weight: 400;
+  font-style: italic;
   margin-bottom: 1.5rem;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
   letter-spacing: 0.5px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.7rem 1.8rem;
-  background: var(--accent-gold);
-  color: var(--text-dark);
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-  background: var(--primary-brown);
-  color: var(--text-light);
-  transform: scale(1.05);
-}
-.logo-banner {
-  width: 220px;
-  margin-bottom: 1rem;
 }
 
 .btn {
@@ -281,15 +238,17 @@ header {
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-top: 1rem;
-  transition: background 0.3s;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
   background: #e0b14d;
+  transform: scale(1.05);
 }
 
-/* MENU / CARDÁPIO */
+/* ===============================
+   MENU / CARDÁPIO
+================================ */
 .menu {
   padding: 5rem 2rem;
   background: var(--cream);
@@ -304,20 +263,23 @@ header {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 4fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .menu-item {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-item:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }
 
 .menu-item img {
@@ -338,10 +300,13 @@ header {
 
 .menu-info p {
   font-size: 0.85rem;
-  color: #444;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-/* SOBRE */
+/* ===============================
+   SOBRE
+================================ */
 .sobre {
   display: flex;
   flex-wrap: wrap;
@@ -354,6 +319,8 @@ header {
 .sobre-texto {
   flex: 1;
   padding: 1rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .sobre h2 {
@@ -367,15 +334,76 @@ header {
   line-height: 1.6;
 }
 
-/* RODAPÉ */
+/* ===============================
+   RODAPÉ
+================================ */
 footer {
   background: var(--overlay);
   color: var(--cream);
   text-align: center;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   font-size: 0.85rem;
+}
+
+.contato-info {
+  font-style: normal;
 }
 
 footer p {
   margin: 0.4rem 0;
+}
+
+/* ===============================
+   RESPONSIVIDADE
+================================ */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.55rem 1rem;
+  }
+
+  .logo img {
+    width: 105px;
+  }
+
+  .nav-links li {
+    margin: 0 0.45rem;
+  }
+
+  .nav-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-content {
+    max-width: 340px;
+  }
+
+  .logo-banner {
+    width: 190px;
+  }
+
+  .menu,
+  .sobre {
+    padding: 4rem 1.2rem;
+  }
+
+  .sobre-texto {
+    padding: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+
+  .menu-toggle span,
+  .nav-links,
+  .nav-links li,
+  .logo img,
+  .hero-content,
+  .btn,
+  .menu-item {
+    transition: none;
+  }
 }
